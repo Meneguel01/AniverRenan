@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Convite de Aniversário</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(to right, #fbc2eb, #a6c1ee);
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .convite-container {
+      perspective: 1200px;
+    }
+
+    .convite {
+      width: 300px;
+      height: 200px;
+      position: relative;
+      transform-style: preserve-3d;
+      transition: transform 1s;
+      cursor: pointer;
+    }
+
+    .convite.abrir {
+      transform: rotateY(180deg);
+    }
+
+    .face {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      backface-visibility: hidden;
+      border-radius: 12px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 1.2rem;
+      text-align: center;
+      padding: 20px;
+    }
+
+    .frente {
+      background: #ffffff;
+    }
+
+    .verso {
+      background: #ffe0f0;
+      transform: rotateY(180deg);
+      flex-direction: column;
+    }
+
+    .verso h2 {
+      margin: 0 0 10px;
+    }
+
+    .verso p {
+      margin: 6px 0;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="convite-container">
+    <div class="convite" onclick="this.classList.toggle('abrir')">
+      <div class="face frente">
+        <strong>🎉 Você está convidado!<br>Clique para abrir 🎁</strong>
+      </div>
+      <div class="face verso">
+        <h2>Aniversário de Laura</h2>
+        <p>📍 Local: Rua das Flores, 123</p>
+        <p>📅 Data: 12 de Agosto de 2025</p>
+        <p>🕒 Horário: 18h</p>
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>
